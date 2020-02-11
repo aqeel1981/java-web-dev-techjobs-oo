@@ -2,7 +2,7 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
-public class Job {
+public class Job<pubic> {
 
     private int id;
     private static int nextId = 1;
@@ -27,6 +27,15 @@ public class Job {
         this.location = aLocation;
         this.positionType = aPositionType;
         this.coreCompetency = aCoreCompetency;
+    }
+    @Override
+    public String toString(){
+            Job justJob = new Job();
+
+        return "\n" + "ID: " + getId() + '\n' + "Name: " +
+                this.name + '\n' + "Employer: " + this.employer + '\n' + "Location: " +
+                this.location + '\n' + "Position Type: " +
+                this.positionType + '\n' + "Core Competency: " + this.coreCompetency + "\n";
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -90,5 +99,7 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency){
         this.coreCompetency = coreCompetency;
     }
+
+
 
 }
